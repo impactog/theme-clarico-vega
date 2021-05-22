@@ -1571,7 +1571,7 @@
 
     <!-- Language Selector Option	-->
     <template id="header_language_ept" inherit_id="website.language_selector">
-        <xpath expr="//button[hasclass('dropdown-toggle')]" position="replace">
+        <!-- <xpath expr="//button[hasclass('dropdown-toggle')]" position="replace">
             <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="true">
                 <span class="lang_btn_name"
@@ -1589,7 +1589,7 @@
                     </a>
                 </t>
             </div>
-        </xpath>
+        </xpath> -->
     </template>
 
     <!-- Header Cart Option-->
