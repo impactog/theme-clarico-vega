@@ -1,5 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+
+    <!--=============================== Footer_style_7 TENDERO =============================-->
+    <template id="customize_footer_style_7" inherit_id="website.footer_custom" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo">
+                <section class="s_text_block pt32">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-12 te_footer_detail">
+                                <div class="te_footer_logo_title_socialicon py-4 px-4">
+                                <!-- Company Logo -->
+                                <a href="/" class="te_footer_logo logo">
+                                    <span t-field="website.logo" class="te_footer_logo_img"
+                                          t-options="{'widget': 'image'}" role="img"
+                                          t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
+                                </a>
+                                <!-- Demo Content -->
+                                <div class="py-2">
+                                    <section>
+                                        <p class="te_company_content" t-field="website.website_company_info" />
+                                    </section>
+                                </div>
+                                <div class="te_footer_add_tel_email">
+                                    <ul class="te_footer_info_text">
+                                        <li t-if="res_company.street or res_company.street2 or res_company.city or res_company.state_id or res_company.zip or res_company.country_id">
+                                            <span class="te_footer_add_tel_email_text_ept">
+                                                <span class="fa fa-map-marker"></span>
+                                            </span>
+                                            <span class="te_ftr_text_style d-inline-block pl-sm-2">
+                                                <span t-field="res_company.street"/>
+                                                <span t-field="res_company.street2"/>
+                                                <span t-field="res_company.city"/>
+                                                <span t-field="res_company.state_id"/>
+                                                <span t-field="res_company.zip"/>
+                                                <span t-field="res_company.country_id"/>
+                                            </span>
+                                        </li>
+                                        <li t-if="res_company.phone">
+                                            <span class="te_footer_add_tel_email_text_ept">
+                                                <span class="fa fa-phone"></span>
+                                            </span>
+                                            <span class="te_ftr_text_style d-inline-block pl-sm-2">
+                                            <a t-att-href="'tel: %s' %res_company.phone">
+                                                <span t-field="res_company.phone" />
+                                            </a>
+                                            </span>
+                                        </li>
+                                        <li t-if="res_company.email">
+                                            <span class="te_footer_add_tel_email_text_ept">
+                                                <span class="fa fa-envelope"></span>
+                                            </span>
+                                            <span class="te_ftr_text_style d-inline-block pl-sm-2">
+                                            <a t-att-href="'mailto: %s' %res_company.email">
+                                                <span t-field="res_company.email" />
+                                            </a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Social Icon -->
+                                <t t-if="website.social_facebook or website.social_twitter or website.social_linkedin or website.social_youtube or website.social_github">
+                                    <section class="te_footer_social_icon">
+                                        <a t-if="website.social_facebook" t-att-href="website.social_facebook" target="_blank" class="btn btn-sm btn-link">
+                                                <span class="fa fa-4x fa-facebook-square"/>
+                                        </a>
+                                        <a t-if="website.social_twitter" t-att-href="website.social_twitter" target="_blank" class="btn btn-sm btn-link">
+                                                <span class="fa fa-4x fa-twitter"/>
+                                        </a>
+                                        <a t-if="website.social_linkedin" t-att-href="website.social_linkedin" target="_blank" class="btn btn-sm btn-link">
+                                                <span class="fa fa-4x fa-linkedin"/>
+                                        </a>
+                                        <a t-if="website.social_youtube" t-att-href="website.social_youtube" target="_blank" class="btn btn-sm btn-link">
+                                                <span class="fa fa-4x fa-youtube-play"/>
+                                        </a>
+                                        <a t-if="website.social_github" t-att-href="website.social_github" target="_blank" class="btn btn-sm btn-link">
+                                                <span class="fa fa-4x fa-github"/>
+                                        </a>
+                                        <a t-if="website.social_instagram" t-att-href="website.social_instagram" target="_blank" class="btn btn-sm btn-link">
+                                                <span class="fa fa-4x fa-instagram"/>
+                                        </a>
+                                        <a t-if="website.social_bitbucket" t-att-href="website.social_bitbucket" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-bitbucket"/>
+                                        </a>
+                                        <a t-if="website.social_vimeo" t-att-href="website.social_vimeo" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-vimeo"/>
+                                        </a>
+                                        <a t-if="website.social_twitch" t-att-href="website.social_twitch" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-twitch"/>
+                                        </a>
+                                        <a t-if="website.social_tumblr" t-att-href="website.social_tumblr" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-tumblr"/>
+                                        </a>
+                                        <a t-if="website.social_flickr" t-att-href="website.social_flickr" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-flickr"/>
+                                        </a>
+                                        <a t-if="website.social_reddit" t-att-href="website.social_reddit" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-reddit"/>
+                                        </a>
+                                        <a t-if="website.social_pinterest" t-att-href="website.social_pinterest" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-pinterest"/>
+                                        </a>
+                                        <a t-if="website.social_houzz" t-att-href="website.social_houzz" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-houzz"/>
+                                        </a>
+                                        <a t-if="website.social_whatsapp" t-att-href="'https://api.whatsapp.com/send?phone=:%s' % website.social_whatsapp" t-att-title="website.social_whatsapp" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-whatsapp"/>
+                                        </a>
+                                        <a t-if="website.social_skype" t-att-href="'skype:%s' % website.social_skype" t-att-title="website.social_skype" target="_blank" class="btn btn-sm btn-link">
+                                        <span class="fa fa-4x fa-skype"/>
+                                        </a>
+                                    </section>
+                                </t>
+                            </div>
+                            </div>
+                            <div class="col-lg-8 col-md-12 py-4 px-4 te_informations_s">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-7 offset-lg-1">
+                                        <p></p>
+                                        <section t-field="website.footer_style_7_content_ept"/>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 te_newsletter_main">
+                                        <div class="te_block_title">Disfruta nuestro Newsletter!</div>
+                                        <div class="te_newsletter">
+                                            <div class="d-inline-block te_newsletter_title pr-3">
+                                                <h5>Suscribirse:</h5>
+                                            </div>
+                                            <div class="te_newsletter_content">
+                                                <div class="d-inline-block">
+                                                    <div class="input-group js_subscribe" data-list-id="1" data-subscribe="off">
+                                                        <input type="email" name="email" class="js_subscribe_email form-control" placeholder="Tu email acá..."/>
+                                                        <span class="input-group-append">
+                                                            <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_default_snippet_text">Suscribirse</a>
+                                                            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_default_snippet_text" disabled="disabled">Gracias!</a>
+                                                        </span>
+                                                        <div class="alert alert-success d-none o_default_snippet_text" role="status">Gracias por suscribirte!</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Multiple Language Selected-->
+                                        <t t-call="website.language_selector"></t>
+                                        <!-- Payment Image -->
+                                        <div class="te_footer_payment_img">
+                                            <div class="oe_structure">
+                                                <section class="te_payment_list">
+                                                    <t t-set="icons"
+                                                       t-value="request.env['payment.acquirer'].sudo().search([('state', 'in', ['enabled', 'test']), ('website_id','in',(False,website.id))]).mapped('payment_icon_ids')"></t>
+                                                    <t t-foreach="icons" t-as="icon">
+                                                        <span t-field="icon.image"
+                                                              t-options="{'widget': 'image', 'alt-field': 'name'}"/>
+                                                    </t>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-11 offset-lg-1 col-md-12 te_copyright_add_language">
+                                        <span>Copyright &amp;copy;</span>
+                                        <span t-field="res_company.name" itemprop="name">Company name</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Scroll Up Icon -->
+                            <div class="scrollup-div text-center">
+                                <a href="#" class="scrollup-a">
+                                    <span class="fa fa-angle-up scrollup-i text-center"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+
+
+
     <!--=============================== Footer Style-1 =============================-->
     <template id="customize_footer_style_1" inherit_id="website.footer_custom" active="True">
         <xpath expr="//div[@id='footer']" position="replace">
@@ -838,154 +1015,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </xpath>
-    </template>
-    <!--=============================== Footer_style_7 =============================-->
-    <template id="customize_footer_style_7" inherit_id="website.footer_custom" active="False">
-        <xpath expr="//div[@id='footer']" position="replace">
-            <div id="footer" class="oe_structure oe_structure_solo">
-                <section class="s_text_block pt32">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-12 te_footer_detail">
-                                <div class="te_footer_logo_title_socialicon py-4 px-4">
-                                <!-- Company Logo -->
-                                <a href="/" class="te_footer_logo logo">
-                                    <span t-field="website.logo" class="te_footer_logo_img"
-                                          t-options="{'widget': 'image'}" role="img"
-                                          t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
-                                </a>
-                                <!-- Demo Content -->
-                                <div class="py-4">
-                                    <section>
-                                        <p class="te_company_content" t-field="website.website_company_info" />
-                                    </section>
-                                </div>
-                                <div class="te_footer_add_tel_email">
-                                    <ul class="te_footer_info_text">
-                                        <li t-if="res_company.street or res_company.street2 or res_company.city or res_company.state_id or res_company.zip or res_company.country_id">
-                                            <span class="te_footer_add_tel_email_text_ept">
-                                                <span class="fa fa-map-marker"></span>
-                                            </span>
-                                            <span class="te_ftr_text_style d-inline-block pl-sm-2">
-                                                <span t-field="res_company.street"/>
-                                                <span t-field="res_company.street2"/>
-                                                <span t-field="res_company.city"/>
-                                                <span t-field="res_company.state_id"/>
-                                                <span t-field="res_company.zip"/>
-                                                <span t-field="res_company.country_id"/>
-                                            </span>
-                                        </li>
-                                        <li t-if="res_company.phone">
-                                            <span class="te_footer_add_tel_email_text_ept">
-                                                <span class="fa fa-phone"></span>
-                                            </span>
-                                            <span class="te_ftr_text_style d-inline-block pl-sm-2">
-                                            <a t-att-href="'tel: %s' %res_company.phone">
-                                                <span t-field="res_company.phone" />
-                                            </a>
-                                            </span>
-                                        </li>
-                                        <li t-if="res_company.email">
-                                            <span class="te_footer_add_tel_email_text_ept">
-                                                <span class="fa fa-envelope"></span>
-                                            </span>
-                                            <span class="te_ftr_text_style d-inline-block pl-sm-2">
-                                            <a t-att-href="'mailto: %s' %res_company.email">
-                                                <span t-field="res_company.email" />
-                                            </a>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- Social Icon -->
-                                <t t-if="website.social_facebook or website.social_twitter or website.social_linkedin or website.social_youtube or website.social_github">
-                                    <section class="te_footer_social_icon">
-                                        <a t-if="website.social_facebook" t-att-href="website.social_facebook"
-                                       class="btn btn-sm btn-link">
-                                            <span class="fa fa-facebook-square"/>
-                                        </a>
-                                        <a t-if="website.social_twitter" t-att-href="website.social_twitter"
-                                           class="btn btn-sm btn-link">
-                                            <span class="fa fa-twitter"/>
-                                        </a>
-                                        <a t-if="website.social_linkedin" t-att-href="website.social_linkedin"
-                                           class="btn btn-sm btn-link">
-                                            <span class="fa fa-linkedin"/>
-                                        </a>
-                                        <a t-if="website.social_youtube" t-att-href="website.social_youtube"
-                                           class="btn btn-sm btn-link">
-                                            <span class="fa fa-youtube-play"/>
-                                        </a>
-                                        <a t-if="website.social_github" t-att-href="website.social_github"
-                                           class="btn btn-sm btn-link">
-                                            <span class="fa fa-github"/>
-                                        </a>
-                                        <a t-if="website.social_instagram" t-att-href="website.social_instagram"
-                                           class="btn btn-sm btn-link">
-                                            <span class="fa fa-instagram"/>
-                                        </a>
-                                    </section>
-                                </t>
-                            </div>
-                            </div>
-                            <div class="col-lg-8 col-md-12 py-4 px-4 te_informations_s">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-7 offset-lg-1">
-                                        <p></p>
-                                        <section t-field="website.footer_style_7_content_ept"/>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 te_newsletter_main">
-                                        <div class="te_block_title">Be the first to know</div>
-                                        <div class="te_newsletter">
-                                            <div class="d-inline-block te_newsletter_title pr-3">
-                                                <h5>Newsletter Signup:</h5>
-                                            </div>
-                                            <div class="te_newsletter_content">
-                                                <div class="d-inline-block">
-                                                    <div class="input-group js_subscribe" data-list-id="1" data-subscribe="off">
-                                                        <input type="email" name="email" class="js_subscribe_email form-control" placeholder="your email..."/>
-                                                        <span class="input-group-append">
-                                                            <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_default_snippet_text">Subscribe</a>
-                                                            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_default_snippet_text" disabled="disabled">Thanks</a>
-                                                        </span>
-                                                        <div class="alert alert-success d-none o_default_snippet_text" role="status">Thanks for your subscription!</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Multiple Language Selected-->
-                                        <t t-call="website.language_selector"></t>
-                                        <!-- Payment Image -->
-                                        <div class="te_footer_payment_img">
-                                            <div class="oe_structure">
-                                                <section class="te_payment_list">
-                                                    <t t-set="icons"
-                                                       t-value="request.env['payment.acquirer'].sudo().search([('state', 'in', ['enabled', 'test']), ('website_id','in',(False,website.id))]).mapped('payment_icon_ids')"></t>
-                                                    <t t-foreach="icons" t-as="icon">
-                                                        <span t-field="icon.image"
-                                                              t-options="{'widget': 'image', 'alt-field': 'name'}"/>
-                                                    </t>
-                                                </section>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-11 offset-lg-1 col-md-12 te_copyright_add_language">
-                                        <span>Copyright &amp;copy;</span>
-                                        <span t-field="res_company.name" itemprop="name">Company name</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Scroll Up Icon -->
-                            <div class="scrollup-div text-center">
-                                <a href="#" class="scrollup-a">
-                                    <span class="fa fa-angle-up scrollup-i text-center"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
         </xpath>
     </template>

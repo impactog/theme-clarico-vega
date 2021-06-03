@@ -2,8 +2,15 @@
 <odoo>
     <!--===============All Snippet List================== -->
     <template id="theme_clarico_vega" inherit_id="website.snippets">
+
+    
         <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]/t[@t-snippet='website.s_banner']"
                position="after">
+            <!-- TENDERO-PAGINAS -->
+            <t t-snippet="theme_clarico_vega.page_style_1"
+                t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/title_style2.jpg"/>
+
+
             <!-- Banner -->
             <t t-snippet="theme_clarico_vega.banner_ept"
                t-thumbnail="/theme_clarico_vega/static/src/img/snippets/snippets_icon/banner.jpg"/>
@@ -438,6 +445,83 @@
             </div>
         </xpath>
     </template>
+
+
+
+
+    <!--============== Tendero - Page Style 1 =================-->
+
+
+
+    <template id="page_style_1" name="Página Style 1">
+
+        <!-- <t t-call="website_blog.index"> -->
+            <!-- Check for active options: the stored value may be used in sub-templates too  -->
+            <!-- <t t-set="opt_blog_post_readable" t-value="request.website.viewref('website_blog.opt_blog_post_readable').active"/>
+            <t t-set="opt_blog_post_sidebar" t-value="request.website.viewref('website_blog.opt_blog_post_sidebar').active"/>
+            <t t-set="opt_blog_post_regular_cover" t-value="request.website.viewref('website_blog.opt_blog_post_regular_cover').active"/>
+            <t t-set="opt_blog_post_breadcrumb" t-value="request.website.viewref('website_blog.opt_blog_post_breadcrumb').active"/>
+            <t t-set="opt_blog_post_select_to_tweet" t-value="request.website.viewref('website_blog.opt_blog_post_select_to_tweet').active"/>
+            <t t-set="opt_blog_post_comment" t-value="request.website.viewref('website_blog.opt_blog_post_comment').active"/>
+            <t t-set="opt_blog_post_select_to_comment" t-value="request.website.viewref('website_blog.opt_blog_post_select_to_comment').active"/> -->
+
+            <section id="o_wblog_post_top">
+                <div id="title" class="blog_header" t-ignore="True">
+                    <div class="o_record_cover_container d-flex flex-column h-100 bg-secondary cover_mid   o_wblog_post_page_cover " >
+                        <t t-set="_record" t-value="page"/>
+                        <t t-set="use_filters" t-value="True"/>
+                        <t t-set="use_size" t-value="True"/>
+                        <t t-set="use_text_size" t-value="True"/>
+                        <t t-set="additionnal_classes" t-value="'o_wblog_post_page_cover'"/>
+
+                        <div class="container text-center position-relative h-100 d-flex flex-column flex-grow-1 justify-content-around">
+                            <div t-attf-class="o_wblog_post_title">
+                                <div t-attf-class="te_block_heading_page_title"  placeholder="Title">Título</div>
+                                <div id="o_wblog_post_subtitle"  placeholder="Subtitle">Subtítulo</div>
+                            </div>
+                            <a id="o_wblog_post_content_jump" href="#o_wblog_post_main" class=" justify-content-center align-items-center rounded-circle mx-auto text-decoration-none">
+                                <i t-attf-class="fa fa-angle-down fa-3x text-white" aria-label="Ir al contenido" title="Ir al contenido"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="o_wblog_post_main" t-attf-class="container pt-4 pb-5">
+                <!-- Sidebar-enabled Layout -->
+                <div t-attf-class="mx-auto o_wblog_read">
+                    <nav aria-label="ruta" class="breadcrumb flex-nowrap py-0 px-0  mb-3 bg-transparent">
+                        <li class="breadcrumb-item" data-oe-model="ir.ui.view" data-oe-id="2315" data-oe-field="arch" data-oe-xpath="/t[1]/nav[1]/li[1]">
+                        <a t-attf-class="/">HOME</a>
+                        </li>
+                        <li t-attf-class="breadcrumb-item text-truncate active">
+                        <span>Política de Privacidad</span>
+                        </li>
+                    </nav>
+
+                    <div t-attf-class="d-flex flex-column flex-lg-row">
+                        <div id="o_wblog_post_content" t-attf-class="'o_wblog_read w-100 flex-shrink-0'">
+                            <p t-attf-class="p-4 pt0 te_three_blocks_content"> Lorem ipsum dolor sit amet, eam et reque justo quidam, te est audire persius Duis meis quas vim ex, ius no oblique phaedrum</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No-Sidebar Layout -->
+                <!-- 
+                <div t-if="not opt_blog_post_sidebar" t-attf-class="mx-auto #{opt_blog_post_readable and 'o_wblog_read'}">
+                    <div class="d-flex flex-column flex-lg-row">
+                        <div id="o_wblog_post_content" t-attf-class=" #{opt_blog_post_readable and 'o_wblog_read w-100 flex-shrink-0'}">
+                            <p class="p-4 pt0 te_three_blocks_content"> Lorem ipsum dolor sit amet, eam et reque justo quidam, te est audire persius Duis meis quas vim ex, ius no oblique phaedrum</p>
+                            <t t-call="website_blog.blog_post_content"/>
+                        </div>
+                    </div>
+                </div> -->
+            </section>
+            <section id="o_wblog_post_footer"/>
+        <!-- </t> -->
+    </template>
+
+
 
     <!--============== Space =================-->
     <template id="s_space" name="Space">

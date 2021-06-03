@@ -991,6 +991,27 @@ class Website(models.Model):
             )
         return werkzeug.url_encode(params)
 
+    def list_providers_oauth(self):
+        """
+            Metodo modificado para imitar al original de oath
+        """
+        try:
+            providers = request.env['auth.oauth.provider'].sudo().search_read([('enabled', '=', True)])
+        except Exception:
+            providers = []
+        for provider in providers:
+            return_url = request.httprequest.url_root + 'auth_oauth/signin'
+            state = OAuthLogin.get_state(self, provider)
+            params = dict(
+                response_type='token',
+                client_id=provider['client_id'],
+                redirect_uri=return_url,
+                scope=provider['scope'],
+                state=json.dumps(state),
+            )
+            provider['auth_link'] = "%s?%s" % (provider['auth_endpoint'], werkzeug.url_encode(params))
+        return providers
+
     def get_product_count(self, attr, search=False, category=False, attributes=False):
         """
         Get the product count based on attribute value and current search domain.

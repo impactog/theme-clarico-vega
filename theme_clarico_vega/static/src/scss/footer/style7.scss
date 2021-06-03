@@ -1,7 +1,7 @@
 footer.o_footer
 {
     margin-top: 1.5rem;
-    background-color: nth($f_color,3) !important;
+    background-color: #AAAAAA !important;
     color:nth($f_color,5);
     .js_change_lang
     {
@@ -79,7 +79,7 @@ footer.o_footer
             vertical-align: top;
             a
             {
-                @include style(2,3);
+                color:rgb(119, 119, 119);
                 @media (min-width:1600px)
                 {
                     font-size:nth($f_sizes,1);
@@ -99,7 +99,7 @@ footer.o_footer
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background-color:rgba(nth($f_color,3),0.2);
+            // background-color:rgba(nth($f_color,3),0.2);
             line-height: 40px;
             text-align: center;
             padding: 0;
@@ -110,6 +110,7 @@ footer.o_footer
             {
                 display:inline-block;
                 padding: 0.625rem 0.3125rem;
+                color: #aad500;
             }
             &:last-child
             {
@@ -148,7 +149,7 @@ footer.o_footer
     .te_footer_logo_title_socialicon
     {
         background-color:nth($f_color,5);
-        color:nth($f_color,3);
+        color:rgb(119, 119, 119);
         margin-top: -70px;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1);
 
@@ -156,7 +157,7 @@ footer.o_footer
         {
             img
             {
-                max-width: 100px;
+                max-width: 220px;
             }
         }
 

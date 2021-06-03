@@ -8,10 +8,10 @@
 						<section>
 							<img class="te_404_img" src="/theme_clarico_vega/static/src/img/404/404-error-image.jpg" alt="404"></img>
 						</section>
-	           	        <p>The page you requested could not be found</p>
+	           	        <p>La página que has solicitado parece no existir.</p>
 	                    <ul class="mt16 mb32">
-	                        <li class="mr8"><a href="/" class="btn btn-primary">Homepage</a></li>
-	                        <li><a href="/contactus" class="btn btn-primary">Contact Us</a></li>
+	                        <li class="mr8"><a href="/" class="btn btn-primary">Home</a></li>
+	                        <li><a href="/contactus" class="btn btn-primary">Contáctanos</a></li>
 	                    </ul>
 					</div>
 				</div>

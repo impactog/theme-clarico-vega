@@ -119,6 +119,11 @@
 		font-size:nth($f_sizes,3);
 	}
 }
+.te_block_heading_page_title {
+	font-weight: 600;
+	line-height: 1.5;
+	font-size: 3.5rem;
+}
 .te_block_numbers 
 {
 	@include style(15,28,inherit)
